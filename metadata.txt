@@ -5,7 +5,7 @@ qgisMinimumVersion=3.28
 qgisMaximumVersion=4.99
 supportsQt6=True
 hasProcessingProvider=yes
-version=0.1.0
+version=0.1.1
 author=Berkay Memis
 email=berkaymemis48@icloud.com
 about=Design complete multi-modal urban street cross-sections (1:50, 1:100) and generate 1:1000 urban skyline & terrain A-B profiles directly from DEM rasters, vector contours, and building footprints. Features Basic and Advanced studio modes, English/Turkish UI toggle, interactive underground utilities, vector SVG / 300 DPI PNG export, Processing Toolbox tools, and native QGIS Print Layout integration.
@@ -19,4 +19,5 @@ experimental=True
 deprecated=False
 license=GPL-2.0-or-later
 changelog=
+    0.1.1 - Clean PEP 8 / Flake8 compliance (renamed loop variables for full QGIS Plugin Hub code quality pass).
     0.1.0 - Initial experimental release featuring Basic/Advanced modes, English default UI with EN/TR toggle, street presets (7m-50m), DEM/Contour/Corridor A-B urban profile extraction, interactive utilities, SVG/PNG export, Processing tools, QGIS Print Layout integration, and full Qt6 / Bandit compliance.
