@@ -1926,7 +1926,10 @@ class UrbanCrossSectionDialog(QDialog):
         self.combo_slope_layer.clear()
         self.combo_slope_layer.addItem(tr_text("item_none_slope", lang), None)
 
-        rasters = [l for l in proj.mapLayers().values() if isinstance(l, QgsRasterLayer) and l.isValid()]
+        rasters = [
+            lyr for lyr in proj.mapLayers().values()
+            if isinstance(lyr, QgsRasterLayer) and lyr.isValid()
+        ]
         for r in rasters:
             self.combo_dem_layer.addItem(r.name(), r.id())
             self.combo_slope_layer.addItem(r.name(), r.id())
@@ -1949,8 +1952,8 @@ class UrbanCrossSectionDialog(QDialog):
         self.combo_contour_layer.blockSignals(True)
         self.combo_contour_layer.clear()
         lines = [
-            l for l in proj.mapLayers().values()
-            if isinstance(l, QgsVectorLayer) and l.isValid() and l.geometryType() == QgsWkbTypes.GeometryType.LineGeometry
+            lyr for lyr in proj.mapLayers().values()
+            if isinstance(lyr, QgsVectorLayer) and lyr.isValid() and lyr.geometryType() == QgsWkbTypes.GeometryType.LineGeometry
         ]
         for vl in lines:
             self.combo_contour_layer.addItem(vl.name(), vl.id())
@@ -1968,8 +1971,8 @@ class UrbanCrossSectionDialog(QDialog):
         self.combo_bldg_layer.clear()
         self.combo_bldg_layer.addItem(tr_text("item_none_bldg", lang), None)
         polys = [
-            l for l in proj.mapLayers().values()
-            if isinstance(l, QgsVectorLayer) and l.isValid() and l.geometryType() == QgsWkbTypes.GeometryType.PolygonGeometry
+            lyr for lyr in proj.mapLayers().values()
+            if isinstance(lyr, QgsVectorLayer) and lyr.isValid() and lyr.geometryType() == QgsWkbTypes.GeometryType.PolygonGeometry
         ]
         for pl in polys:
             self.combo_bldg_layer.addItem(pl.name(), pl.id())
