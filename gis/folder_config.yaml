@@ -1,0 +1,10 @@
+# GIS Folder Configuration
+folder_type: "gis"
+description: "PyQGIS and map integration adapters for UrbanCrossSection."
+allowed_imports:
+  - "qgis.core"
+  - "qgis.gui"
+  - "qgis.PyQt.*"
+  - "math"
+  - "re"
+  - "os"

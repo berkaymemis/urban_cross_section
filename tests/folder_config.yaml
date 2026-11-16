@@ -1,0 +1,9 @@
+# Tests Folder Configuration
+folder_type: "tests"
+description: "Unit and headless dual-runtime E2E smoke tests for UrbanCrossSection."
+allowed_imports:
+  - "qgis.core"
+  - "qgis.PyQt.*"
+  - "unittest"
+  - "os"
+  - "sys"

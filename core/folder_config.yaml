@@ -1,0 +1,12 @@
+# Core Folder Configuration
+folder_type: "core"
+description: "Pure Python core logic for UrbanCrossSection with zero GUI or GIS dependencies."
+allowed_imports:
+  - "math"
+  - "json"
+  - "copy"
+  - "xml.sax.saxutils"
+forbidden_imports:
+  - "qgis.*"
+  - "PyQt5.*"
+  - "PyQt6.*"

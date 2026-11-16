@@ -1,0 +1,19 @@
+[general]
+name=UrbanCrossSection — Street & 1:1000 Urban Cross-Section Studio
+description=Interactive street cross-section designer (Streetmix-style) and 1:1000 urban skyline & topographic A-A' / B-B' section generator for QGIS.
+qgisMinimumVersion=3.28
+qgisMaximumVersion=4.99
+supportsQt6=True
+version=1.0.0
+author=Berkay Memis
+email=berkaymemis48@icloud.com
+about=Design complete multi-modal urban street cross-sections (1:50, 1:100) and generate 1:1000 urban skyline & terrain A-B profiles directly from DEM rasters, vector contours, and building footprints. Features Basic and Advanced studio modes, English/Turkish UI toggle, interactive underground utilities, vector SVG / 300 DPI PNG export, and native QGIS Print Layout integration.
+tracker=https://github.com/berkaymemis/urban_cross_section/issues
+repository=https://github.com/berkaymemis/urban_cross_section
+tags=urban-planning,cross-section,street-section,urban-design,topography,profile,road-design,print-layout
+category=Vector Analysis / Urban Planning
+icon=icons/icon.png
+experimental=False
+deprecated=False
+license=GPL-2.0-or-later
+changelog=1.0.0: Initial official release featuring Basic/Advanced modes, full English default + EN/TR toggle, street presets (7m-50m), DEM/Contour/Corridor A-B urban profile extraction, interactive utilities, SVG/PNG export, and QGIS Print Layout integration.

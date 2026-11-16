@@ -1,0 +1,7 @@
+# Processing Provider Folder Configuration
+folder_type: "processing_provider"
+description: "QgsProcessingProvider and QgsProcessingAlgorithm subclasses for batch road cross-section workflows."
+allowed_imports:
+  - "qgis.core"
+  - "qgis.PyQt.*"
+  - "os"

@@ -1,0 +1,23 @@
+# UrbanCrossSection Plugin Manifest
+name: "urban_cross_section"
+display_name: "UrbanCrossSection — Street & 1:1000 Urban Cross-Section Studio"
+version: "1.0.0"
+author: "Berkay Memiş"
+email: "berkaymemis48@icloud.com"
+license: "GPL-2.0-or-later"
+qgis_minimum_version: "3.28"
+qgis_maximum_version: "4.99"
+supports_qt6: true
+category: "Urban Planning & Design"
+tags:
+  - "urban-planning"
+  - "cross-section"
+  - "street-section"
+  - "mpyy"
+  - "urban-design"
+  - "print-layout"
+architecture:
+  clean_separation: true
+  core_independent: true
+  zero_external_dependencies: true
+  dual_runtime_tested: true

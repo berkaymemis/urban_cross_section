@@ -1,0 +1,8 @@
+# UI Folder Configuration
+folder_type: "ui"
+description: "PyQt GUI and QPainter architectural preview canvas for UrbanCrossSection."
+allowed_imports:
+  - "qgis.PyQt.*"
+  - "qgis.core"
+  - "os"
+  - "math"

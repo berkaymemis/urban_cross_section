@@ -1,0 +1,6 @@
+# Icons Folder Configuration
+folder_type: "icons"
+description: "High-resolution 48px and 512px icons for UrbanCrossSection."
+allowed_imports:
+  - "qgis.PyQt.*"
+  - "os"

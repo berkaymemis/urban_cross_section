@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+dist/
+*.zip
+output/
+tests/smoke_*
