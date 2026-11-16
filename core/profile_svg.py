@@ -6,7 +6,7 @@ Jüri paftaları, Illustrator, Photoshop ve CAD için 1/1000 ölçekli mimari SV
 """
 
 import math
-import xml.sax.saxutils as saxutils
+from html import escape
 from typing import Optional
 from .profile_model import UrbanProfile
 from .i18n import get_language, tr_text
@@ -182,7 +182,7 @@ class SvgUrbanProfileExporter:
                 lines.append(f'<text x="{sx:.1f}" y="{sy + 22:.1f}" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#fef08a" text-anchor="middle">{arrow}</text>')
 
         # 8. BAŞLIK VE ÖLÇEK (Kullanıcı görseli stili: BOLD BÜYÜK BAŞLIK)
-        safe_title = saxutils.escape(prof.title)
+        safe_title = escape(prof.title, quote=False)
         lines.append('<!-- TITLE -->')
         lines.append(f'<text x="{margin_left + 10:.1f}" y="38" font-family="Impact, Arial Black, sans-serif" font-size="22" letter-spacing="1" fill="#ffffff" stroke="#0f172a" stroke-width="0.8">{safe_title}</text>')
 

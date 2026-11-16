@@ -70,7 +70,7 @@ def find_contour_vector_layer() -> Optional[QgsVectorLayer]:
     proj = QgsProject.instance()
     for layer in proj.mapLayers().values():
         if isinstance(layer, QgsVectorLayer) and layer.isValid():
-            if layer.geometryType() == QgsWkbTypes.LineGeometry:
+            if layer.geometryType() == QgsWkbTypes.GeometryType.LineGeometry:
                 name_lower = layer.name().lower()
                 if any(k in name_lower for k in ("esyukselti", "es_yukselti", "contour", "izoips", "munhani", "kot", "egri")):
                     return layer
@@ -99,7 +99,7 @@ def find_building_polygon_layer() -> Optional[QgsVectorLayer]:
     proj = QgsProject.instance()
     for layer in proj.mapLayers().values():
         if isinstance(layer, QgsVectorLayer) and layer.isValid():
-            if layer.geometryType() == QgsWkbTypes.PolygonGeometry:
+            if layer.geometryType() == QgsWkbTypes.GeometryType.PolygonGeometry:
                 name_lower = layer.name().lower()
                 if any(k in name_lower for k in ("bina", "yapi", "building", "structure", "konut", "mevcut_durum", "ada")):
                     return layer
@@ -382,10 +382,10 @@ def sample_profile_from_contours(
             if d_near < best_dist and elev_field in f.fields().names():
                 try:
                     ev = float(str(f[elev_field]).replace(",", "."))
-                    best_dist = d_near
-                    fallback_elev = ev
-                except Exception:
-                    pass
+                except (ValueError, TypeError):
+                    continue
+                best_dist = d_near
+                fallback_elev = ev
         intersections = [(0.0, fallback_elev), (total_len, fallback_elev)]
 
     # Uç noktaları tamamla (Başlangıç ve Bitiş)

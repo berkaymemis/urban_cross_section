@@ -38,16 +38,16 @@ class SectionLineMapTool(QgsMapTool):
         self.arrow_band = None
 
         if self.canvas and QgsRubberBand:
-            self.corridor_band = QgsRubberBand(self.canvas, QgsWkbTypes.PolygonGeometry)
+            self.corridor_band = QgsRubberBand(self.canvas, QgsWkbTypes.GeometryType.PolygonGeometry)
             self.corridor_band.setFillColor(QColor(37, 99, 235, 38))
             self.corridor_band.setStrokeColor(QColor(37, 99, 235, 160))
             self.corridor_band.setWidth(1)
 
-            self.rubber_band = QgsRubberBand(self.canvas, QgsWkbTypes.LineGeometry)
+            self.rubber_band = QgsRubberBand(self.canvas, QgsWkbTypes.GeometryType.LineGeometry)
             self.rubber_band.setColor(QColor("#dc2626"))
             self.rubber_band.setWidth(2)
 
-            self.arrow_band = QgsRubberBand(self.canvas, QgsWkbTypes.LineGeometry)
+            self.arrow_band = QgsRubberBand(self.canvas, QgsWkbTypes.GeometryType.LineGeometry)
             self.arrow_band.setColor(QColor("#1d4ed8"))
             self.arrow_band.setWidth(2)
 
@@ -60,14 +60,14 @@ class SectionLineMapTool(QgsMapTool):
     def _update_preview(self, pt_a, pt_b):
         if not self.rubber_band:
             return
-        self.rubber_band.reset(QgsWkbTypes.LineGeometry)
+        self.rubber_band.reset(QgsWkbTypes.GeometryType.LineGeometry)
         self.rubber_band.addPoint(pt_a)
         self.rubber_band.addPoint(pt_b)
 
         if self.corridor_band:
-            self.corridor_band.reset(QgsWkbTypes.PolygonGeometry)
+            self.corridor_band.reset(QgsWkbTypes.GeometryType.PolygonGeometry)
         if self.arrow_band:
-            self.arrow_band.reset(QgsWkbTypes.LineGeometry)
+            self.arrow_band.reset(QgsWkbTypes.GeometryType.LineGeometry)
 
         dx = pt_b.x() - pt_a.x()
         dy = pt_b.y() - pt_a.y()
@@ -118,7 +118,7 @@ class SectionLineMapTool(QgsMapTool):
             self.arrow_band.setToGeometry(QgsGeometry.fromMultiPolylineXY(arrow_parts), None)
 
     def canvasPressEvent(self, event):
-        if event.button() != Qt.LeftButton:
+        if event.button() != Qt.MouseButton.LeftButton:
             self.reset()
             return
 
@@ -129,7 +129,7 @@ class SectionLineMapTool(QgsMapTool):
             self.pt_a = click_pt
             self._last_hover = click_pt
             if self.rubber_band:
-                self.rubber_band.reset(QgsWkbTypes.LineGeometry)
+                self.rubber_band.reset(QgsWkbTypes.GeometryType.LineGeometry)
                 self.rubber_band.addPoint(self.pt_a)
             self.firstPointPicked.emit(self.pt_a)
         else:
@@ -158,8 +158,8 @@ class SectionLineMapTool(QgsMapTool):
         self.pt_b = None
         self._last_hover = None
         if self.rubber_band:
-            self.rubber_band.reset(QgsWkbTypes.LineGeometry)
+            self.rubber_band.reset(QgsWkbTypes.GeometryType.LineGeometry)
         if self.corridor_band:
-            self.corridor_band.reset(QgsWkbTypes.PolygonGeometry)
+            self.corridor_band.reset(QgsWkbTypes.GeometryType.PolygonGeometry)
         if self.arrow_band:
-            self.arrow_band.reset(QgsWkbTypes.LineGeometry)
+            self.arrow_band.reset(QgsWkbTypes.GeometryType.LineGeometry)

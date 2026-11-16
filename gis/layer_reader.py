@@ -58,7 +58,7 @@ def get_road_line_layers(project=None):
     layers = []
     for layer in prj.mapLayers().values():
         if isinstance(layer, QgsVectorLayer) and layer.isValid():
-            if layer.geometryType() == QgsWkbTypes.LineGeometry:
+            if layer.geometryType() == QgsWkbTypes.GeometryType.LineGeometry:
                 layers.append(layer)
     return layers
 

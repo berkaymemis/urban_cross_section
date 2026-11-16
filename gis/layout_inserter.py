@@ -35,7 +35,7 @@ def get_or_create_layout(layout_name="Urban Cross-Sections Layout", project=None
 
     # A3 Yatay Sayfa Boyutu (420 x 297 mm)
     page = layout.pageCollection().pages()[0]
-    page.setPageSize(QgsLayoutSize(420, 297, QgsUnitTypes.LayoutMillimeters))
+    page.setPageSize(QgsLayoutSize(420, 297, QgsUnitTypes.LayoutUnit.LayoutMillimeters))
 
     layout_mgr.addLayout(layout)
     return layout
@@ -61,8 +61,8 @@ def insert_section_image_to_layout(
     picture_item.setPicturePath(image_path)
 
     # Konum ve boyut (Milimetre cinsinden)
-    picture_item.attemptMove(QgsLayoutPoint(float(x_mm), float(y_mm), QgsUnitTypes.LayoutMillimeters))
-    picture_item.attemptResize(QgsLayoutSize(float(width_mm), float(height_mm), QgsUnitTypes.LayoutMillimeters))
+    picture_item.attemptMove(QgsLayoutPoint(float(x_mm), float(y_mm), QgsUnitTypes.LayoutUnit.LayoutMillimeters))
+    picture_item.attemptResize(QgsLayoutSize(float(width_mm), float(height_mm), QgsUnitTypes.LayoutUnit.LayoutMillimeters))
 
     target_layout.addLayoutItem(picture_item)
     return picture_item

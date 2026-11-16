@@ -15,15 +15,9 @@ from qgis.PyQt.QtGui import (
 icons_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Format_ARGB32 uyumluluğu (Qt5 vs Qt6)
-try:
-    FORMAT_ARGB32 = QImage.Format.Format_ARGB32
-except AttributeError:
-    FORMAT_ARGB32 = QImage.Format_ARGB32
+FORMAT_ARGB32 = QImage.Format.Format_ARGB32
 
-try:
-    ANTIALIASING = QPainter.RenderHint.Antialiasing
-except AttributeError:
-    ANTIALIASING = QPainter.Antialiasing
+ANTIALIASING = QPainter.RenderHint.Antialiasing
 
 def create_icon(size):
     img = QImage(size, size, FORMAT_ARGB32)

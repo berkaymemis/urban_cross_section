@@ -1950,7 +1950,7 @@ class UrbanCrossSectionDialog(QDialog):
         self.combo_contour_layer.clear()
         lines = [
             l for l in proj.mapLayers().values()
-            if isinstance(l, QgsVectorLayer) and l.isValid() and l.geometryType() == QgsWkbTypes.LineGeometry
+            if isinstance(l, QgsVectorLayer) and l.isValid() and l.geometryType() == QgsWkbTypes.GeometryType.LineGeometry
         ]
         for vl in lines:
             self.combo_contour_layer.addItem(vl.name(), vl.id())
@@ -1969,7 +1969,7 @@ class UrbanCrossSectionDialog(QDialog):
         self.combo_bldg_layer.addItem(tr_text("item_none_bldg", lang), None)
         polys = [
             l for l in proj.mapLayers().values()
-            if isinstance(l, QgsVectorLayer) and l.isValid() and l.geometryType() == QgsWkbTypes.PolygonGeometry
+            if isinstance(l, QgsVectorLayer) and l.isValid() and l.geometryType() == QgsWkbTypes.GeometryType.PolygonGeometry
         ]
         for pl in polys:
             self.combo_bldg_layer.addItem(pl.name(), pl.id())

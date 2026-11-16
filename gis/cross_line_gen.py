@@ -97,7 +97,7 @@ def get_or_create_cross_section_layer(project=None, crs=None):
 
     pal = QgsPalLayerSettings()
     pal.fieldName = "section_id"
-    pal.placement = QgsPalLayerSettings.Line
+    pal.placement = QgsPalLayerSettings.Placement.Line
     text_fmt = QgsTextFormat()
     text_fmt.setSize(10)
     text_fmt.setColor(QColor("#dc2626"))

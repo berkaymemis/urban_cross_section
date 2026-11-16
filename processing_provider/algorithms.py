@@ -39,7 +39,7 @@ class GenerateCrossSectionLinesAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterVectorLayer(
                 self.INPUT_LAYER,
                 "Input Road Layer (Line)",
-                [QgsProcessing.TypeVectorLine],
+                [QgsProcessing.SourceType.TypeVectorLine],
             )
         )
         self.addParameter(
@@ -47,7 +47,7 @@ class GenerateCrossSectionLinesAlgorithm(QgsProcessingAlgorithm):
                 self.WIDTH_FIELD,
                 "Road Width Field (Optional)",
                 parentLayerParameterName=self.INPUT_LAYER,
-                type=QgsProcessingParameterField.Any,
+                type=QgsProcessingParameterField.DataType.Any,
                 optional=True,
             )
         )
@@ -55,7 +55,7 @@ class GenerateCrossSectionLinesAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterNumber(
                 self.DEFAULT_WIDTH,
                 "Default Road Width (m)",
-                type=QgsProcessingParameterNumber.Double,
+                type=QgsProcessingParameterNumber.Type.Double,
                 defaultValue=15.0,
                 minValue=2.0,
                 maxValue=120.0,
@@ -65,7 +65,7 @@ class GenerateCrossSectionLinesAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterFeatureSink(
                 self.OUTPUT,
                 "Perpendicular Section Lines",
-                QgsProcessing.TypeVectorLine,
+                QgsProcessing.SourceType.TypeVectorLine,
             )
         )
 
@@ -86,7 +86,7 @@ class GenerateCrossSectionLinesAlgorithm(QgsProcessingAlgorithm):
             self.OUTPUT,
             context,
             fields,
-            QgsWkbTypes.LineString,
+            QgsWkbTypes.Type.LineString,
             layer.crs(),
         )
 
@@ -114,7 +114,7 @@ class GenerateCrossSectionLinesAlgorithm(QgsProcessingAlgorithm):
                 out_feat.setAttribute("section_id", f"S-{count + 1}")
                 out_feat.setAttribute("road_width", float(w))
                 out_feat.setAttribute("source_fid", feat.id())
-                sink.addFeature(out_feat, QgsFeatureSink.FastInsert)
+                sink.addFeature(out_feat, QgsFeatureSink.Flag.FastInsert)
                 count += 1
 
             if total > 0:
@@ -152,7 +152,7 @@ class BatchExportSectionsAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterVectorLayer(
                 self.INPUT_LAYER,
                 "Input Road Layer (Line)",
-                [QgsProcessing.TypeVectorLine],
+                [QgsProcessing.SourceType.TypeVectorLine],
             )
         )
         self.addParameter(
@@ -160,7 +160,7 @@ class BatchExportSectionsAlgorithm(QgsProcessingAlgorithm):
                 self.WIDTH_FIELD,
                 "Road Width Field",
                 parentLayerParameterName=self.INPUT_LAYER,
-                type=QgsProcessingParameterField.Any,
+                type=QgsProcessingParameterField.DataType.Any,
             )
         )
         self.addParameter(

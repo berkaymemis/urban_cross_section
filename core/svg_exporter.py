@@ -6,7 +6,7 @@ Standart SVG 1.1 uyumlu, ölçekli, mimari yarışma ve jüri paftası kalitesin
 """
 
 import math
-from xml.sax.saxutils import escape
+from html import escape
 from .elements import ElementType
 from .i18n import get_language, tr_text
 
@@ -252,7 +252,7 @@ class SvgCrossSectionExporter:
                 )
                 res.append(
                     f'  <text x="{bx + bw / 2}" y="{fy}" font-family="sans-serif" font-size="7.5" font-weight="bold" '
-                    f'fill="#f8fafc" text-anchor="middle">{escape(bldg.shop_name)}</text>'
+                    f'fill="#f8fafc" text-anchor="middle">{escape(bldg.shop_name, quote=False)}</text>'
                 )
 
             else:
@@ -669,7 +669,7 @@ class SvgCrossSectionExporter:
 
             # Eleman Etiketi (Dar alanlarda alternatif basamaklandırma ile çakışmayı önle!)
             label_y = dim_y1 + 20 if (i % 2 == 0) else dim_y1 + 33
-            lbl = escape(elem.label)
+            lbl = escape(elem.label, quote=False)
             parts.append(
                 f'  <text x="{mid}" y="{label_y}" font-family="sans-serif" font-size="9" font-weight="500" '
                 f'fill="#475569" text-anchor="middle">{lbl}</text>'
@@ -712,7 +712,7 @@ class SvgCrossSectionExporter:
         lang = getattr(self.sec, "language", get_language())
         parts.append(
             f'  <text x="{self.canvas_width / 2}" y="42" font-family="sans-serif" font-size="20" font-weight="bold" '
-            f'letter-spacing="0.5" fill="#0f172a" text-anchor="middle">{escape(self.sec.name.upper())}</text>'
+            f'letter-spacing="0.5" fill="#0f172a" text-anchor="middle">{escape(self.sec.name.upper(), quote=False)}</text>'
         )
         subtitle = tr_text(
             "svg_subtitle",
@@ -726,7 +726,7 @@ class SvgCrossSectionExporter:
         )
         parts.append(
             f'  <text x="{self.canvas_width / 2}" y="68" font-family="sans-serif" font-size="11.5" font-weight="500" '
-            f'fill="#475569" text-anchor="middle">{escape(subtitle)}</text>'
+            f'fill="#475569" text-anchor="middle">{escape(subtitle, quote=False)}</text>'
         )
         parts.append(
             f'  <line x1="{self.margin_x}" y1="84" x2="{self.canvas_width - self.margin_x}" y2="84" '

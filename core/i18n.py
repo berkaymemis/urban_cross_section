@@ -628,7 +628,7 @@ def tr_text(key: str, lang: Optional[str] = None, **kwargs) -> str:
     if kwargs:
         try:
             return raw.format(**kwargs)
-        except Exception:
+        except (KeyError, ValueError, TypeError, IndexError):
             return raw
     return raw
 
