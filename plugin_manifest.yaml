@@ -1,7 +1,7 @@
 # UrbanCrossSection Plugin Manifest
 name: "urban_cross_section"
 display_name: "urban_cross_section"
-version: "0.1.1"
+version: "0.1.2"
 author: "Berkay Memiş"
 email: "berkaymemis48@icloud.com"
 license: "GPL-2.0-or-later"
