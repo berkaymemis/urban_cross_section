@@ -1,6 +1,6 @@
-# UrbanCrossSection — Street & 1:1000 Urban Cross-Section Studio
+# urban_cross_section
 
-**UrbanCrossSection** is a dual-mode QGIS plugin (compatible with **QGIS 3.28+ / Qt5** and **QGIS 4.x / Qt6**) for urban planners, landscape architects, and transportation engineers. It combines a Streetmix-style street cross-section editor (`1:100`) with a live `1:1000` topographic & building skyline section extractor directly from QGIS map layers.
+**urban_cross_section** is a dual-mode QGIS plugin (compatible with **QGIS 3.28+ / Qt5** and **QGIS 4.x / Qt6**) for urban planners, landscape architects, and transportation engineers. It combines a Streetmix-style street cross-section editor (`1:100`) with a live `1:1000` topographic & building skyline section extractor directly from QGIS map layers.
 
 ---
 

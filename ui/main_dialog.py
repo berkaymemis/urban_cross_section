@@ -2469,7 +2469,7 @@ class UrbanCrossSectionDialog(QDialog):
         self.toggle_collapse(True)
         self.lbl_mini_status.setText(tr_text("mini_pick_a", lang))
         if self.iface.messageBar():
-            self.iface.messageBar().pushInfo("UrbanCrossSection", tr_text("msg_pick_bar", lang))
+            self.iface.messageBar().pushInfo("urban_cross_section", tr_text("msg_pick_bar", lang))
 
     def _on_map_section_completed(self, pt_a: QgsPointXY, pt_b: QgsPointXY):
         lang = get_language()

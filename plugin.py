@@ -20,7 +20,7 @@ class UrbanCrossSectionPlugin:
         self.iface = iface
         self.plugin_dir = os.path.dirname(__file__)
         self.actions = []
-        self.menu = "&UrbanCrossSection"
+        self.menu = "&urban_cross_section"
         self.provider = None
         self.dialog = None
 
@@ -38,7 +38,7 @@ class UrbanCrossSectionPlugin:
 
         self.action = QAction(
             icon,
-            "UrbanCrossSection — Street & 1:1000 Cross-Section Studio",
+            "urban_cross_section",
             self.iface.mainWindow() if self.iface else None,
         )
         self.action.setToolTip("Interactive street cross-section designer and 1:1000 urban elevation profile studio")

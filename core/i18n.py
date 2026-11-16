@@ -34,9 +34,9 @@ def set_language(lang: str) -> str:
 STRINGS: Dict[str, Dict[str, str]] = {
     "en": {
         # App / Header
-        "window_title": "UrbanCrossSection — Street & 1:1000 Cross-Section Studio",
+        "window_title": "urban_cross_section",
         "brand_html": (
-            "<b>UrbanCrossSection</b> "
+            "<b>urban_cross_section</b> "
             "<span style='color:#64748b;font-size:11px;'>| Street &amp; Urban Profile Engine</span>"
         ),
         "mode_label": "Mode:",
@@ -331,9 +331,9 @@ STRINGS: Dict[str, Dict[str, str]] = {
         "file_dlg_folder": "Select Folder for Multi-Sheet SVGs",
     },
     "tr": {
-        "window_title": "UrbanCrossSection — Kentsel Sokak ve 1/1000 A-B Kesit Stüdyosu",
+        "window_title": "urban_cross_section",
         "brand_html": (
-            "<b>UrbanCrossSection</b> "
+            "<b>urban_cross_section</b> "
             "<span style='color:#64748b;font-size:11px;'>| Sokak ve 1/1000 Topografik Kesit Motoru</span>"
         ),
         "mode_label": "Mod:",

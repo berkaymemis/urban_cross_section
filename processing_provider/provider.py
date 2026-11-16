@@ -22,10 +22,10 @@ class UrbanCrossSectionProvider(QgsProcessingProvider):
         return "urbancrosssection"
 
     def name(self):
-        return "Urban Cross-Section"
+        return "urban_cross_section"
 
     def longName(self):
-        return "UrbanCrossSection — Street & Urban Terrain Section Tools"
+        return "urban_cross_section — Street & Urban Terrain Section Tools"
 
     def icon(self):
         icon_path = os.path.join(
